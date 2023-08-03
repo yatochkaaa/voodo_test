@@ -6,21 +6,83 @@
     <link rel="stylesheet" href="output.css" />
     <title>Voodo Test</title>
   </head>
-  <body class="bg-sand font-main font-bold text-xl">
-    <header
-      class="flex justify-between border-b border-1 py-12 max-w-screen-2xl mx-auto"
-    >
-      <img src="logo.svg" alt="logo" />
+  <body class="bg-sand">
+    <!-- header -->
+    <header class="flex justify-between py-12 max-w-screen-xl mx-auto">
+      <a
+        class="block relative font font-extrabold text-5xl"
+        href="./index.html"
+      >
+        <div class="absolute -left-14 top-2">
+          <img src="../src/imgs/logo.svg" alt="logo" />
+        </div>
+        VooDoo
+        <br />
+        Test
+      </a>
       <div class="block">
-        <img
-          class="inline-block"
-          src="../src/imgs/shopping-cart.svg"
-          alt="shopping cart"
-        />
-        <button class="bg-black text-white px-3 py-1 rounded ml-12">
+        <a href="#shopping-cart">
+          <img
+            class="inline-block"
+            src="../src/imgs/shopping-cart.svg"
+            alt="shopping cart"
+          />
+        </a>
+        <button
+          class="bg-black text-white px-3 py-1 rounded ml-12 font-space-grotesk font-bold text-xl"
+        >
           Sign-up
         </button>
       </div>
     </header>
+
+    <!-- divider -->
+    <div class="bg-black border-b border-1"></div>
+
+    <!-- main -->
+    <main class="max-w-screen-xl mx-auto pt-24">
+      <!-- beta-info -->
+      <div class="bg-black flex justify-between items-center p-6 w-full">
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 h-8 stroke-sand"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+              />
+            </svg>
+
+            <p class="text-sand font-bold uppercase ml-1">Alpha</p>
+          </div>
+
+          <p class="text-sand ml-12">Important info regarding our service</p>
+        </div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 stroke-sand"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+          />
+        </svg>
+      </div>
+
+      <!-- products -->
+    </main>
   </body>
 </html>

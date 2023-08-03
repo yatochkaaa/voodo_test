@@ -9,7 +9,7 @@ module.exports = {
       sand: "#fcf7e6",
     },
     fontFamily: {
-      main: ["Space Grotesk"],
+      "space-grotesk": ["Space Grotesk"],
     },
   },
   plugins: [],
