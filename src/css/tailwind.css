@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pagination-item {
+  @apply border border-black rounded-full font-light text-lg mx-1 h-10 w-10 text-center;
+}
