@@ -13,26 +13,35 @@ export function createCards(products) {
     const details = document.createElement("div");
     details.classList.add("card-details");
 
+    const coreInfo = document.createElement("div");
+    coreInfo.classList.add("card-core-info");
+
+    const conditionInfo = document.createElement("div");
+    conditionInfo.classList.add("card-condition-info");
+
     const productName = document.createElement("h2");
-    productName.classList.add("product-name");
+    productName.classList.add("product-name", "font-bold");
     productName.textContent = product.title;
 
     const price = document.createElement("p");
-    price.classList.add("price");
+    price.classList.add("price", "font-bold");
     price.textContent = `$${product.variants[0]?.price || "N/A"}`; // Используем "N/A", если цена отсутствует
 
     const condition = document.createElement("p");
-    condition.classList.add("condition");
-    condition.textContent = `Condition: ${product.product_type || "N/A"}`; // Используем "N/A", если тип продукта отсутствует
+    condition.classList.add("card-condition");
+    condition.textContent = "Condition";
 
     const rating = document.createElement("p");
-    rating.classList.add("rating");
-    rating.textContent = `Rating: ${product.rating || "N/A"}`; // Используем "N/A", если рейтинг отсутствует
+    rating.classList.add("card-quality");
+    rating.textContent = "Slightly used";
 
-    details.appendChild(productName);
-    details.appendChild(price);
-    details.appendChild(condition);
-    details.appendChild(rating);
+    details.appendChild(coreInfo);
+    details.appendChild(conditionInfo);
+
+    coreInfo.appendChild(productName);
+    coreInfo.appendChild(price);
+    conditionInfo.appendChild(condition);
+    conditionInfo.appendChild(rating);
 
     card.appendChild(image);
     card.appendChild(details);

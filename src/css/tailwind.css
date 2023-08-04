@@ -7,3 +7,20 @@
 .pagination-item {
   @apply border border-black rounded-full font-light text-lg mx-1 h-10 w-10 text-center;
 }
+
+.card-image {
+  @apply mb-3;
+}
+
+.card-details {
+  @apply grid grid-cols-2;
+}
+
+.card-condition-info {
+  @apply text-right;
+}
+
+.card-condition {
+  @apply font-medium;
+}
+
