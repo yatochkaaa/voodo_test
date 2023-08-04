@@ -501,8 +501,17 @@ video {
 .-left-14{
   left: -3.5rem;
 }
+.left-0{
+  left: 0px;
+}
+.right-0{
+  right: 0px;
+}
 .top-2{
   top: 0.5rem;
+}
+.top-full{
+  top: 100%;
 }
 .mx-auto{
   margin-left: auto;
@@ -572,6 +581,10 @@ video {
 .rounded{
   border-radius: 0.25rem;
 }
+.rounded-b{
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
 .border-b{
   border-bottom-width: 1px;
 }
@@ -612,13 +625,13 @@ video {
   font-size: 3rem;
   line-height: 1;
 }
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .font-bold{
   font-weight: 700;
@@ -653,8 +666,18 @@ video {
   font-weight: 300;
 }
 
+.rotate{
+  transform-origin: center;
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .card-image{
   margin-bottom: 0.75rem;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .card-details{

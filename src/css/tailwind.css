@@ -8,8 +8,12 @@
   @apply border border-black rounded-full font-light text-lg mx-1 h-10 w-10 text-center;
 }
 
+.rotate {
+  @apply origin-center rotate-180;
+}
+
 .card-image {
-  @apply mb-3;
+  @apply mb-3 border border-black rounded;
 }
 
 .card-details {

@@ -43,7 +43,8 @@
     <main class="max-w-screen-xl mx-auto py-24">
       <!-- beta-info -->
       <div
-        class="bg-black flex justify-between items-center mb-12 p-6 w-full font-space-grotesk"
+        class="bg-black flex justify-between items-center mb-12 p-6 w-full rounded font-space-grotesk relative"
+        id="beta-info"
       >
         <div class="flex items-center">
           <div class="flex items-center">
@@ -68,20 +69,33 @@
           <p class="text-sand ml-12">Important info regarding our service</p>
         </div>
 
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6 stroke-sand"
+        <button id="toggleInfo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 stroke-sand"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
+
+        <div
+          class="bg-black text-sand w-full absolute top-full left-0 right-0 rounded-b p-6"
+          id="hiddenInfo"
+          style="display: none"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum illum
+          deserunt nesciunt ipsa ducimus? Deserunt, nemo perferendis alias
+          laudantium nulla quisquam cupiditate. Harum ex quibusdam debitis
+          cumque est minus veritatis!
+        </div>
       </div>
 
       <!-- products -->
@@ -96,4 +110,5 @@
   </body>
 
   <script type="module" src="../src/js/utils/updatePage.js"></script>
+  <script type="module" src="../src/js/utils/toggleHiddenInfo.js"></script>
 </html>
