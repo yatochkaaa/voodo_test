@@ -518,6 +518,18 @@ video {
 .ml-12{
   margin-left: 3rem;
 }
+.mb-7{
+  margin-bottom: 1.75rem;
+}
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+.mb-16{
+  margin-bottom: 4rem;
+}
+.mb-12{
+  margin-bottom: 3rem;
+}
 .block{
   display: block;
 }
@@ -591,6 +603,19 @@ video {
 .py-12{
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+.py-24{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.pt-12{
+  padding-top: 3rem;
+}
+.pb-12{
+  padding-bottom: 3rem;
+}
+.pt-24{
+  padding-top: 6rem;
 }
 .font-space-grotesk{
   font-family: Space Grotesk;

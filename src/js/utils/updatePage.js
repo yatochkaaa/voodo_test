@@ -1,23 +1,21 @@
+import { fetchProducts } from "../api/fetchProducts.js";
 import { createCards } from "./createCards.js";
-import { totalProducts, limit } from "../../constants/constants.js";
+import { firstPage, totalPageCount } from "../../constants/constants.js";
 
-const firstPage = 1;
-let totalPageCount = Math.ceil(totalProducts / limit);
 let currentPage = firstPage;
 let amountPreviusPages;
 let amountNextPages;
 
-// Функция для обновления данных на странице
-async function updatePage() {
+export async function updatePage() {
   const products = await fetchProducts(currentPage, totalPageCount);
 
-  // Очищаем содержимое контейнера для карточек
+  // Update cards
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
 
   createCards(products);
 
-  // Обновляем информацию о текущей странице
+  // Update pagination
   const paginationElement = document.getElementById("pagination");
   paginationElement.innerHTML = "";
 
@@ -52,10 +50,12 @@ async function updatePage() {
       break;
   }
 
-  // first button
+  // First button
   const firstPageButton = document.createElement("button");
   firstPageButton.textContent = firstPage;
   firstPageButton.classList.add("pagination-item");
+  checkActivePaginationItem(firstPage) &&
+    firstPageButton.classList.add("bg-black", "text-sand");
   paginationElement.appendChild(firstPageButton);
 
   firstPageButton.addEventListener("click", () => {
@@ -63,7 +63,7 @@ async function updatePage() {
     updatePage();
   });
 
-  // divider
+  // Divider
   if (currentPage > 4) {
     const dividerPageElement = document.createElement("div");
     dividerPageElement.textContent = "...";
@@ -71,7 +71,7 @@ async function updatePage() {
     paginationElement.appendChild(dividerPageElement);
   }
 
-  // middle buttons
+  // Middle buttons
   for (
     let pageNumber = currentPage - amountPreviusPages;
     pageNumber < currentPage + amountNextPages;
@@ -82,6 +82,8 @@ async function updatePage() {
     const pageButton = document.createElement("button");
     pageButton.textContent = pageNumber;
     pageButton.classList.add("pagination-item");
+    checkActivePaginationItem(pageNumber) &&
+      pageButton.classList.add("bg-black", "text-sand");
     paginationElement.appendChild(pageButton);
 
     pageButton.addEventListener("click", () => {
@@ -90,7 +92,7 @@ async function updatePage() {
     });
   }
 
-  // divider
+  // Divider
   if (currentPage < 17) {
     const dividerPageElement = document.createElement("div");
     dividerPageElement.textContent = "...";
@@ -98,10 +100,12 @@ async function updatePage() {
     paginationElement.appendChild(dividerPageElement);
   }
 
-  // last button
+  // Last button
   const lastPageButton = document.createElement("button");
   lastPageButton.textContent = totalPageCount;
   lastPageButton.classList.add("pagination-item");
+  checkActivePaginationItem(totalPageCount) &&
+    lastPageButton.classList.add("bg-black", "text-sand");
   paginationElement.appendChild(lastPageButton);
 
   lastPageButton.addEventListener("click", () => {
@@ -110,19 +114,8 @@ async function updatePage() {
   });
 }
 
-// Функция для получения данных из API с учетом выбранной страницы
-async function fetchProducts(page) {
-  try {
-    const response = await fetch(
-      `https://voodoo-sandbox.myshopify.com/products.json?limit=24&page=${page}`
-    );
-    const data = await response.json();
-
-    return data.products;
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return [];
-  }
+export function checkActivePaginationItem(page) {
+  return page === currentPage;
 }
 
 // Update initial data
