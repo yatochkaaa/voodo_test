@@ -1,4 +1,4 @@
-import { getCart, removeFromCart } from "./cart.js";
+import { getCart, removeFromCart, updateCart } from "./cart.js";
 
 export function showCartProducts() {
   const cartProductsDiv = document.getElementById("cart-products");
@@ -23,10 +23,33 @@ export function showCartProducts() {
     titleElement.textContent = product.title;
 
     const priceElement = document.createElement("p");
-    priceElement.textContent = `Price: $${product.variants[0]?.price}`;
+    priceElement.textContent = `$${product.variants[0]?.price}`;
 
-    const quantityElement = document.createElement("p");
-    quantityElement.textContent = `Quantity: ${product.quantity}`;
+    const quantityElement = document.createElement("div");
+    quantityElement.classList.add("flex");
+
+    const quantityValueElement = document.createElement("p");
+    quantityValueElement.textContent = `${product.quantity}`;
+
+    // Minus Button
+    const minusButton = document.createElement("button");
+    minusButton.textContent = "-";
+    minusButton.classList.add("cart-quantity-button");
+    minusButton.addEventListener("click", () => {
+      if (product.quantity > 0) {
+        product.quantity--;
+        updateCart(product, quantityValueElement);
+      }
+    });
+
+    // Plus Button
+    const plusButton = document.createElement("button");
+    plusButton.textContent = "+";
+    plusButton.classList.add("cart-quantity-button");
+    plusButton.addEventListener("click", () => {
+      product.quantity++;
+      updateCart(product, quantityValueElement);
+    });
 
     // Right Side
     const rightSide = document.createElement("div");
@@ -46,6 +69,7 @@ export function showCartProducts() {
       productElement.remove();
     });
 
+    // Trash Icon
     const svgTrash = document.createElementNS(
       "http://www.w3.org/2000/svg",
       "svg"
@@ -74,6 +98,10 @@ export function showCartProducts() {
     coreInfo.appendChild(titleElement);
     coreInfo.appendChild(priceElement);
     coreInfo.appendChild(quantityElement);
+
+    quantityElement.appendChild(minusButton);
+    quantityElement.appendChild(quantityValueElement);
+    quantityElement.appendChild(plusButton);
 
     leftSide.appendChild(imageElement);
     leftSide.appendChild(coreInfo);

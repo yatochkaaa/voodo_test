@@ -529,6 +529,9 @@ video {
 .mb-12{
   margin-bottom: 3rem;
 }
+.mb-14{
+  margin-bottom: 3.5rem;
+}
 .mb-16{
   margin-bottom: 4rem;
 }
@@ -710,12 +713,18 @@ video {
 }
 
 .cart-product{
+  margin-bottom: 2.5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .cart-left-side{
   display: flex;
+}
+
+.cart-quantity-button{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .cart-image{

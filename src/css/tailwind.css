@@ -13,11 +13,15 @@
 }
 
 .cart-product {
-  @apply flex justify-between;
+  @apply flex justify-between mb-10;
 }
 
 .cart-left-side {
   @apply flex;
+}
+
+.cart-quantity-button {
+  @apply px-2;
 }
 
 .cart-image {
