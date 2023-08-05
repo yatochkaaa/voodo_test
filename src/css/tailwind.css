@@ -48,6 +48,10 @@
   @apply font-bold uppercase bg-black p-4 w-full text-white rounded hover:bg-gray-light transition-all duration-300;
 }
 
+.footer-list {
+  @apply mb-12 lg:mb-0;
+}
+
 .footer-link {
   @apply font-bold uppercase hover:text-gray-light transition-all duration-300;
 }

@@ -8,17 +8,12 @@
   </head>
   <body class="bg-sand">
     <!-- header -->
-    <header class="flex justify-between py-12 max-w-screen-xl mx-auto">
+    <header class="flex justify-between py-12 mx-6 2xl:px-0 2xl:max-w-screen-xl 2xl:mx-auto">
       <a
-        class="block relative font font-extrabold text-5xl"
+        class="flex static 2xl:relative top-0 -left-14"
         href="./index.html"
       >
-        <div class="absolute -left-14 top-2">
-          <img src="../src/imgs/logo.svg" alt="logo" />
-        </div>
-        VooDoo
-        <br />
-        Test
+        <img src="../src/imgs/header-logo.svg" alt="logo">
       </a>
       <div class="block">
         <button class="toggle-cart" id="shopping-cart">
@@ -80,7 +75,7 @@
     <div class="bg-black border-b border-1"></div>
 
     <!-- main -->
-    <main class="max-w-screen-xl mx-auto py-24">
+    <main class="mx-6 2xl:px-0 2xl:max-w-screen-xl 2xl:mx-auto py-24">
       <!-- beta-info -->
       <div
         class="bg-black flex justify-between items-center mb-12 p-6 w-full rounded font-space-grotesk relative"
@@ -148,22 +143,31 @@
       <div class="flex justify-center" id="pagination"></div>
     </main>
 
-    <footer class="bg-white grid grid-cols-4 py-20 px-28">
-      <a class="flex justify-center" href="./index.html">
+    <footer class="bg-white flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 p-12 xl:py-20 xl:px-28">
+      <a class="
+        footer-list
+        flex
+        justify-center
+        order-last
+        sm:justify-start
+        sm:order-first
+        lg:justify-center
+      "
+      href="./index.html">
         <img class="w-20 h-20" src="../src/imgs/logo.svg" alt="logo">
       </a>
-      <ul>
+      <ul class="footer-list">
         <li><a class="footer-link" href="#faq">FAQ</a></li>
         <li><a class="footer-link" href="#returns">Returns</a></li>
         <li><a class="footer-link" href="#contact">Contact</a></li>
       </ul>
-      <ul>
+      <ul class="footer-list">
         <li><a class="footer-link" href="#terms-and-conditions">Terms & Conditions</a></li>
         <li><a class="footer-link" href="#privacy-policy">Privacy Policy</a></li>
         <li><a class="footer-link" href="#coockie-policy">Cookie Policy</a></li>
         <li><a class="footer-link" href="#cookie-settings">Cookie Settings</a></li>
       </ul>
-      <ul>
+      <ul class="footer-list">
         <li><a class="footer-link" href="#about-second-chance">Aboust second chance</a></li>
         <li><a class="footer-link" href="#career">Career</a></li>
         <li><a class="footer-link" href="#facebook">Facebook</a></li>
