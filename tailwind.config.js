@@ -7,6 +7,7 @@ module.exports = {
       black: "#000000",
       white: "#ffffff",
       sand: "#fcf7e6",
+      dark: "#1e1e1e",
     },
     fontFamily: {
       "space-grotesk": ["Space Grotesk"],
