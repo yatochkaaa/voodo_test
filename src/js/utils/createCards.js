@@ -1,3 +1,5 @@
+import { addToCart } from "./cart.js";
+
 export function createCards(products) {
   const cardContainer = document.getElementById("card-container");
 
@@ -35,6 +37,13 @@ export function createCards(products) {
     rating.classList.add("card-quality");
     rating.textContent = "Slightly used";
 
+    const addToCartButton = document.createElement("button");
+    addToCartButton.classList.add("card-button");
+    addToCartButton.textContent = "Add to Cart";
+    addToCartButton.addEventListener("click", () => {
+      addToCart(product);
+    });
+
     details.appendChild(coreInfo);
     details.appendChild(conditionInfo);
 
@@ -45,6 +54,7 @@ export function createCards(products) {
 
     card.appendChild(image);
     card.appendChild(details);
+    card.appendChild(addToCartButton);
 
     cardContainer.appendChild(card);
   });

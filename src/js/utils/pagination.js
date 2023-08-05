@@ -15,7 +15,7 @@ export async function updatePage() {
   // Update pagination
   const paginationElement = document.getElementById("pagination");
   paginationElement.innerHTML = "";
-  const pagesToShow = 5; // Количество отображаемых кнопок пагинации
+  const pagesToShow = 5;
 
   function createPaginationButton(pageNumber) {
     const pageButton = document.createElement("button");
@@ -42,7 +42,7 @@ export async function updatePage() {
   createPaginationButton(firstPage);
 
   // Left divider
-  if (currentPage > pagesToShow) {
+  if (currentPage > pagesToShow - 1) {
     createDivider();
   }
 
@@ -54,7 +54,7 @@ export async function updatePage() {
   }
 
   // Right divider
-  if (currentPage < totalPageCount - pagesToShow) {
+  if (currentPage < totalPageCount - (pagesToShow - 2)) {
     createDivider();
   }
 

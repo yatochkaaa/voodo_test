@@ -1,8 +1,5 @@
-// const shoppingCart = document.getElementById("shopping-cart");
 const toggleCartIcon = document.querySelectorAll(".toggle-cart");
 const cartDrawer = document.getElementById("cart-drawer");
-
-console.log(toggleCartIcon);
 
 function toggleCartDrawer() {
   if (cartDrawer.style.right === "-445px") {

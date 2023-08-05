@@ -17,7 +17,7 @@
 }
 
 .card-details {
-  @apply grid grid-cols-2;
+  @apply grid grid-cols-2 mb-3;
 }
 
 .card-condition-info {
@@ -26,5 +26,9 @@
 
 .card-condition {
   @apply font-medium;
+}
+
+.card-button {
+  @apply font-bold uppercase bg-black p-4 w-full text-white rounded;
 }
 
