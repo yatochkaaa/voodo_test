@@ -7,7 +7,7 @@ export function createCards(products) {
 
     const image = document.createElement("img");
     image.classList.add("card-image");
-    image.src = product.images[0]?.src || "https://dummyimage.com/320"; // Используем заглушку, если у товара нет изображения
+    image.src = product.images[0]?.src || "https://dummyimage.com/320";
     image.alt = "Product Image";
 
     const details = document.createElement("div");
@@ -25,7 +25,7 @@ export function createCards(products) {
 
     const price = document.createElement("p");
     price.classList.add("price", "font-bold");
-    price.textContent = `$${product.variants[0]?.price || "N/A"}`; // Используем "N/A", если цена отсутствует
+    price.textContent = `$${product.variants[0]?.price || "N/A"}`;
 
     const condition = document.createElement("p");
     condition.classList.add("card-condition");
