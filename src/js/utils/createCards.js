@@ -9,7 +9,7 @@ export function createCards(products) {
 
     const image = document.createElement("img");
     image.classList.add("card-image");
-    image.src = product.images[0]?.src || "https://dummyimage.com/320";
+    image.src = product.images[0]?.src;
     image.alt = "Product Image";
 
     const details = document.createElement("div");
