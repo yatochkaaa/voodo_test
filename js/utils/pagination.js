@@ -1,6 +1,6 @@
 import { fetchProducts } from "../api/fetchProducts.js";
 import { createCards } from "./createCards.js";
-import { firstPage, totalPageCount } from "../../constants/constants.js";
+import { firstPage, totalPageCount } from "../constants/constants.js";
 
 let currentPage = firstPage;
 
