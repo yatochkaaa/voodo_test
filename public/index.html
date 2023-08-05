@@ -34,7 +34,7 @@
     </header>
 
     <!-- cart drawer -->
-    <div class="bg-dark p-11 w-[445px] h-full text-sand fixed top-0 z-50 transition-all duration-300" style="right: -445px;" id="cart-drawer">
+    <div class="bg-dark p-11 w-full max-w-[445px] h-full text-sand fixed top-0 z-50 transition-all duration-300" style="right: -445px;" id="cart-drawer">
       <div class="cart-items">
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-bold text-sand">
@@ -101,7 +101,8 @@
             <p class="text-sand font-bold uppercase ml-1">Alpha</p>
           </div>
 
-          <p class="text-sand ml-12">Important info regarding our service</p>
+          <p class="text-sand ml-12 hidden md:block">Important info regarding our service</p>
+          <p class="text-sand ml-6 block md:hidden" id="infoTextSmall">Important info</p>
         </div>
 
         <button id="toggleInfo">
