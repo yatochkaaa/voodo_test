@@ -12,6 +12,18 @@
   @apply origin-center rotate-180;
 }
 
+.cart-product {
+  @apply flex justify-between;
+}
+
+.cart-left-side {
+  @apply flex;
+}
+
+.cart-image {
+  @apply h-[74px] w-[74px] mr-4;
+}
+
 .card-image {
   @apply mb-3 border border-black rounded;
 }
