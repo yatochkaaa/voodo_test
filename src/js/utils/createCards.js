@@ -1,4 +1,4 @@
-import { addToCart } from "./cart.js";
+import { addToCart, calculateCartTotal } from "./cart.js";
 
 export function createCards(products) {
   const cardContainer = document.getElementById("card-container");

@@ -12,6 +12,7 @@ export function addToCart(product) {
   }
 
   showCartProducts();
+  updateCartTotal();
 }
 
 export function getCart() {
@@ -20,21 +21,32 @@ export function getCart() {
 
 export function removeFromCart(index) {
   cart.splice(index, 1);
+  updateCartTotal();
 }
 
 export function updateCart(product, el) {
   if (product.quantity <= 0) {
-    // Удаляем элемент из корзины, если количество равно или меньше нуля
     const index = cart.findIndex((item) => item.id === product.id);
     if (index !== -1) {
       removeFromCart(index);
       showCartProducts();
     }
   }
-  // Обновляем поле Quantity в карточке
   el.textContent = `${product.quantity}`;
+  updateCartTotal();
 }
 
-export function clearCart() {
-  cart.length = 0;
+export function calculateCartTotal() {
+  let total = 0;
+
+  for (const product of cart) {
+    total += product.variants[0]?.price * product.quantity;
+  }
+
+  return total;
+}
+
+function updateCartTotal() {
+  const cartTotalElement = document.getElementById("cart-total");
+  cartTotalElement.textContent = `$${calculateCartTotal().toFixed(2)}`;
 }
