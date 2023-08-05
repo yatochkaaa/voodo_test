@@ -45,6 +45,10 @@
 }
 
 .card-button {
-  @apply font-bold uppercase bg-black p-4 w-full text-white rounded;
+  @apply font-bold uppercase bg-black p-4 w-full text-white rounded hover:bg-gray-light transition-all duration-300;
+}
+
+.footer-link {
+  @apply font-bold uppercase hover:text-gray-light transition-all duration-300;
 }
 

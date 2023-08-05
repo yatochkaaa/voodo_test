@@ -29,9 +29,11 @@
           />
         </a>
         <button
-          class="bg-black text-white px-3 py-1 rounded ml-12 font-space-grotesk font-bold text-xl"
+          class="bg-black text-white px-3 py-1 rounded ml-12 font-space-grotesk font-bold text-xl hover:bg-gray-light transition-all duration-300"
         >
-          Sign-up
+          <a href="#sign-up">
+            Sign-up
+          </a>
         </button>
       </div>
     </header>
@@ -57,9 +59,14 @@
             </svg>            
           </button>
         </div>
-        <div class="bg-sand border-b border-1 mb-14"></div>
       </div>
+      <!-- divider -->
+      <div class="bg-sand border-b border-1 mb-14"></div>
+
+      <!-- cart products -->
       <div id="cart-products"></div>
+
+      <!-- divider -->
       <div class="bg-sand border-b border-1 mb-9"></div>
 
       <!-- cart total -->
@@ -140,6 +147,29 @@
       <!-- pagination -->
       <div class="flex justify-center" id="pagination"></div>
     </main>
+
+    <footer class="bg-white grid grid-cols-4 py-20 px-28">
+      <a class="flex justify-center" href="./index.html">
+        <img class="w-20 h-20" src="../src/imgs/logo.svg" alt="logo">
+      </a>
+      <ul>
+        <li><a class="footer-link" href="#faq">FAQ</a></li>
+        <li><a class="footer-link" href="#returns">Returns</a></li>
+        <li><a class="footer-link" href="#contact">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a class="footer-link" href="#terms-and-conditions">Terms & Conditions</a></li>
+        <li><a class="footer-link" href="#privacy-policy">Privacy Policy</a></li>
+        <li><a class="footer-link" href="#coockie-policy">Cookie Policy</a></li>
+        <li><a class="footer-link" href="#cookie-settings">Cookie Settings</a></li>
+      </ul>
+      <ul>
+        <li><a class="footer-link" href="#about-second-chance">Aboust second chance</a></li>
+        <li><a class="footer-link" href="#career">Career</a></li>
+        <li><a class="footer-link" href="#facebook">Facebook</a></li>
+        <li><a class="footer-link" href="#instagram">Instagram</a></li>
+      </ul>
+    </footer>
   </body>
 
   <script type="module" src="../src/js/utils/showCartProducts.js"></script>
